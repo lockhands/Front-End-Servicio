@@ -7,9 +7,7 @@ import {
 	IconButton,
 	styled,
 } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
-
 import { useNavigate } from "react-router-dom";
 
 const MenuButton = styled(Typography)(({ theme }) => ({
@@ -50,7 +48,14 @@ const Navbar = ({ names }) => {
 						})}
 					</Box>
 					<MenuButton variant="h6">Mi cuenta</MenuButton>
-					<Typography variant="h6">Cerrar Sesión</Typography>
+					<MenuButton
+						onClick={() => {
+							navigate("/");
+						}}
+						variant="h6"
+					>
+						Cerrar Sesión
+					</MenuButton>
 				</Toolbar>
 			</AppBar>
 			<Container></Container>

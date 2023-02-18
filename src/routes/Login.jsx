@@ -22,9 +22,9 @@ function Login() {
 				axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
 				if (response.data.userType == "Administrador") {
-					navigate("/dashboard-control");
+					navigate("/admin");
 				} else if (response.data.userType == "Profesor") {
-					navigate("/dashboard-profesor");
+					navigate("/profesor");
 				}
 			})
 			.catch((err) => setInvalidCredentials(true));

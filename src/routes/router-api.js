@@ -12,8 +12,8 @@ const router = createBrowserRouter([
     element: <ProfesorDashboard />,
   },
   {
-    path: "/dashboard-control",
-    element: <ControlDashboard />,
+    path: "/AdminDashboard-control",
+    element: <AdminDashboard />,
   },
 ]);
 

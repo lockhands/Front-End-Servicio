@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-import Navbar from "../components/Navbar";
 import { Container, Typography } from "@mui/material";
+import Navbar from "../../components/Navbar";
 
 function ProfesorDashboard() {
 	const [clases, setClase] = useState([]);

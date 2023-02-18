@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { INFO_PROFESORES } from "../components/Tables/INFO_PROFESORES";
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
+import { INFO_PROFESORES } from "../../components/Tables/INFO_PROFESORES";
 
 function AdminProfesores({ datos }) {
 	const { state } = useLocation();
@@ -15,9 +14,7 @@ function AdminProfesores({ datos }) {
 	};
 
 	return (
-		<div>
-			<Navbar names={state} />
-
+		<>
 			<h2>Administrador de Profesores</h2>
 			<h3>Listado de profesores</h3>
 
@@ -35,7 +32,7 @@ function AdminProfesores({ datos }) {
 			<br></br>
 
 			<INFO_PROFESORES input={text} navbar={state} />
-		</div>
+		</>
 	);
 }
 

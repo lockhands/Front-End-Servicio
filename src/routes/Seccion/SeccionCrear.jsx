@@ -1,31 +1,27 @@
-import React from 'react'
-import Navbar from '../../components/Navbar';
-import { useLocation } from 'react-router-dom';
-import { Typography } from '@mui/material';
-import SelectAño from '../../components/Select/SelectAño';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { Typography } from "@mui/material";
+import Navbar from "../../components/Navbar";
+import SelectAño from "../../components/Select/SelectAño";
 
-function SeccionCrear(){
-    const {state}=useLocation();
-    return(
-        <div>
-                <Navbar names={state}/>
-        
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+function SeccionCrear() {
+	const { state } = useLocation();
+	return (
+		<div>
+			<Navbar names={state} />
 
-                <Typography>Crear sección</Typography>
-                
-               
-                
-        <SelectAño />
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
 
-        </div>
-    );
-};
+			<Typography>Crear sección</Typography>
+
+			<SelectAño />
+		</div>
+	);
+}
 
 export default SeccionCrear;
-
