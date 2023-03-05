@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import { Container, Typography } from "@mui/material";
-import { getClases } from "../api/profesores_clases";
+import { getClases } from "../../api/profesores_clases";
 import { useLocation } from "react-router-dom";
-import { INFO_CLASES } from "../components/Tables/INFO_CLASES";
-import { getProfesores } from "../api/profesores";
+import { INFO_CLASES } from "../../components/Tables/INFO_CLASES";
+import { getProfesores } from "../../api/profesores";
+import GoBackButton from "../../components/atoms/GoBackButton";
 
 function ProfesorClases() {
 	const [clases, setClase] = useState([]);
@@ -27,7 +27,7 @@ function ProfesorClases() {
 
 	return (
 		<Container>
-			<Navbar names={state} />
+			<GoBackButton to={"prev"} />
 
 			<h1>Administración de profesores</h1>
 

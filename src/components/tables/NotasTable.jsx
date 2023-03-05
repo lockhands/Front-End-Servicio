@@ -8,7 +8,9 @@ import EditCell from "../molecules/EditCell";
 import axios from "axios";
 
 function NotasTable({ data, info,refetch }) {
+  
   const [updatedNotas, setUpdatedNotas] = useState([]);
+
   const onChange = (estudianteId, puntaje) => {
     const newUpdatedNotas = [
       ...updatedNotas.filter((n) => n.estudianteId != estudianteId),

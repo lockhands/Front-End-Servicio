@@ -17,7 +17,7 @@ function SeccionDashboard() {
 	const [secciones, setSecciones] = useState([]);
 
 	const handleClick = () => {
-		navigate("/admin/secciones/crear", { state: state });
+		navigate("crear", { state: state });
 	};
 
 	useEffect(() => {

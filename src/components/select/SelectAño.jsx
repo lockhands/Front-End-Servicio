@@ -33,7 +33,7 @@ export default function SelectAño() {
 			<TextField id="outlined-basic" label="Sección" variant="outlined" />
 			<br></br>
 			<Button size="large" variant="contained" color="success">
-				Confirmar
+				Crear sección
 			</Button>
 		</FormControl>
 	);

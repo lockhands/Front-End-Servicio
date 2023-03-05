@@ -4,27 +4,31 @@ import { useState, useEffect, useMemo } from "react";
 import { INFO_PROFESOR } from "./columnas";
 import { useNavigate } from "react-router-dom";
 import { getProfesores } from "../../api/profesores";
+import { css } from "@emotion/react";
+import SchoolIcon from '@mui/icons-material/School';
+import EditIcon from '@mui/icons-material/Edit';
+import LockIcon from '@mui/icons-material/Lock';
 import "../../css/tablas.css";
 
-export function INFO_PROFESORES({ input, navbar }) {
-	//   const [data, setData] = useState([]);
-	//   const [data, setData] = useState([]);
+export function INFO_PROFESORES({ input }) {
+	
+
 
 	const [datos, setData] = useState([]);
 	const navigate = useNavigate();
 
 	const informacion = (id) => {
-		navigate(`/admin/profesores/${id}/clases`, { state: navbar });
+		navigate(`${id}/clases`);
 	};
 	const modificar = (id) => {
-		navigate(`/admin/profesores/${id}/modificar`, { state: navbar });
+		navigate(`${id}/modificar`);
 	};
 
 	useEffect(() => {
 		const fetchProfesores = async () => {
 			const profesoresRes = await getProfesores();
-			console.log(profesoresRes);
 			setData(profesoresRes);
+			console.log(profesoresRes);
 		};
 
 		fetchProfesores();
@@ -73,20 +77,34 @@ export function INFO_PROFESORES({ input, navbar }) {
 									else
 										return (
 											<td {...cell.getCellProps()}>
-												<button
-													onClick={() => {
-														informacion(cell.value);
-													}}
+												
+												<div
+												
+												css={css`
+												width=100%;
+												display:flex;
+												justify-content:space-evenly;
+												align-items:center;`}
 												>
-													Enviar
-												</button>
-												<button
+												<SchoolIcon 
+
+												onClick={() =>{
+													informacion(cell.value);
+												}}
+
+												/>
+
+												<EditIcon
+
+												
 													onClick={() => {
 														modificar(cell.value);
 													}}
-												>
-													Modificar
-												</button>
+												/>
+
+												<LockIcon
+												/>
+												</div>	
 											</td>
 										);
 								})}

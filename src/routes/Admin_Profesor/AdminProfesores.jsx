@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { INFO_PROFESORES } from "../components/Tables/INFO_PROFESORES";
+import { INFO_PROFESORES } from "../../components/Tables/INFO_PROFESORES";
 import TextField from "@mui/material/TextField";
+import GoBackButton from "../../components/atoms/GoBackButton";
 
 function AdminProfesores({ datos }) {
+
 	const { state } = useLocation();
 	const [text, setText] = useState("");
 
@@ -16,7 +18,8 @@ function AdminProfesores({ datos }) {
 
 	return (
 		<div>
-			<Navbar names={state} />
+			
+			<GoBackButton to={"prev"} />
 
 			<h2>Administrador de Profesores</h2>
 			<h3>Listado de profesores</h3>
@@ -34,7 +37,7 @@ function AdminProfesores({ datos }) {
 			<br></br>
 			<br></br>
 
-			<INFO_PROFESORES input={text} navbar={state} />
+			<INFO_PROFESORES input={text} />
 		</div>
 	);
 }

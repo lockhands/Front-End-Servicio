@@ -3,6 +3,10 @@ import { useTable } from "react-table";
 import { useState, useMemo } from "react";
 import { INFO_CLASE } from "./columnas";
 import { useNavigate } from "react-router-dom";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { css } from "@emotion/react";
 
 import "../../css/tablas.css";
 
@@ -42,7 +46,21 @@ export function INFO_CLASES({ datos }) {
 									} else
 										return (
 											<td {...cell.getCellProps()}>
-												<button>Enviar</button>
+
+
+												<div
+												css={css`
+												width=100%;
+												display:flex;
+												justify-content:space-evenly;
+												align-items:center;`}
+												>
+
+												<VisibilityIcon/>
+												<EditIcon/>
+												<DeleteIcon/>
+
+												</div>
 											</td>
 										);
 								})}

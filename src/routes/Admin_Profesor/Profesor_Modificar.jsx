@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useLocation, useParams} from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { Container, Typography } from '@mui/material';
+import GoBackButton from '../../components/atoms/GoBackButton';
 
 function Profesor_Modificar() {
  
@@ -27,8 +27,9 @@ function Profesor_Modificar() {
     
 
       <Container>
-        <Navbar names={state} />
-        <h4>Volver</h4>
+
+
+        <GoBackButton to={"prev"} />
         <h2>Administración de profesores</h2>
         <h3>Modificando cuenta</h3>
         <h3>Modificando información de la cuenta</h3>

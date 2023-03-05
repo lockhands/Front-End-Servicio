@@ -17,7 +17,6 @@ function ControlDashboard() {
 
 	return (
 		<div>
-			<Navbar names={navbar} />
 
 			<h2>Bienvenido administrador Carlos</h2>
 			<p> ¿Qué desea hacer?</p>
@@ -25,7 +24,7 @@ function ControlDashboard() {
 			<div>
 				<button
 					onClick={() => {
-						Profesor("/admin/profesores", navbar);
+						Profesor("admin/profesores", navbar);
 					}}
 				>
 					Administrar Profesores
